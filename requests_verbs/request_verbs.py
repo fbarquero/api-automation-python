@@ -7,8 +7,8 @@ class RedisApiRequests:
 
     def __init__(self):
         self.s = Session()
-        self.base_url = "http://172.0.21.1:4201"
-    
+        self.base_url = os.environ.get('BASE_URL', "http://localhost:4201")
+
     def do_get(self, endpoint):
         url = self.build_url(endpoint)
         headers = self.get_headers()
