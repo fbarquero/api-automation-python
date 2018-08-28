@@ -6,7 +6,7 @@ class RedisApiRequests:
 
     def __init__(self):
         self.s = Session()
-        self.base_url = os.environ.get('BASE_URL', 'http://localhost')
+        self.base_url = os.environ.get('BASE_URL')
     
     def do_get(self, endpoint):
         url = self.build_url(endpoint)
