@@ -8,4 +8,4 @@ services:
     # If adding a fixed container name then won't be able to scale
     container_name: api-auto
     environment:
-      - BASE_URL
+      - BASE_URL: ${BASE_URL}
