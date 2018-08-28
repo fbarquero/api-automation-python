@@ -1,12 +1,12 @@
 from requests import Session
 import json
-
+import os
 
 class RedisApiRequests:
 
     def __init__(self):
         self.s = Session()
-        self.base_url = 'http://10.0.75.1:4201'
+        self.base_url = os.environ.get('BASE_URL', 'http://localhost')
     
     def do_get(self, endpoint):
         url = self.build_url(endpoint)
